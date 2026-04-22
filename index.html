@@ -181,7 +181,7 @@ function calculateEMI() {
     let feePerc = parseFloat(document.getElementById('fee').value) || 0;
     let prepayVal = parseFloat(document.getElementById('prepayInput').value) || 0;
 
-    if (isNaN(P) || isNaN(annualRate) || isNaN(years)) {
+    if (!P || !annualRate || !years) {
         document.getElementById('result').innerHTML = "Please enter all values";
         return;
     }
@@ -296,4 +296,3 @@ function compareLoans() {
 
 </body>
 </html>
-```
