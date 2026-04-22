@@ -1,3 +1,8 @@
+# Corrected Full HTML Code for GitHub Deployment
+
+Replace your current file with this complete corrected code.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,181 +11,301 @@
 <title>Loanify | Advanced EMI Platform</title>
 
 <style>
-body { margin:0; font-family:'Segoe UI'; background:#f4f6fb; }
-header { background:#1e3c72; color:white; padding:15px 30px; display:flex; justify-content:space-between; }
-nav a { color:white; margin-left:15px; text-decoration:none; }
-.container { max-width:1200px; margin:auto; padding:20px; }
-.card { background:white; padding:20px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-top:20px; }
-input, select { width:100%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; }
-button { width:100%; padding:12px; background:#2a5298; color:white; border:none; border-radius:8px; cursor:pointer; }
-table { width:100%; border-collapse:collapse; font-size:12px; }
-th, td { border:1px solid #ddd; padding:6px; text-align:center; }
-th { background:#2a5298; color:white; }
-.highlight { background:#e6f0ff; padding:10px; border-radius:8px; }
-.table-container { max-height:350px; overflow:auto; }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6fb;
+}
+
+header {
+    background: #1e3c72;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2a5298;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.highlight {
+    background: #e6f0ff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.table-container {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media(max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background: #2a5298;
+    color: white;
+}
 </style>
 </head>
 
 <body>
+
 <header>
-<h2>Loanify</h2>
-<nav>
-<a href="#">Home</a>
-</nav>
+    <h2>Loanify</h2>
+    <nav>
+        <a href="#">Home</a>
+    </nav>
 </header>
 
 <div class="container">
 
-<!-- EMI CALCULATOR -->
-<div class="card">
-<h3>Advanced EMI Calculator</h3>
+    <div class="card">
+        <h3>Advanced EMI Calculator</h3>
 
-<input type="number" id="amount" placeholder="Loan Amount">
-<input type="number" id="rate" placeholder="Interest Rate (%)">
-<input type="number" id="time" placeholder="Time (Years)">
+        <input type="number" id="amount" placeholder="Loan Amount">
+        <input type="number" id="rate" placeholder="Interest Rate (%)">
+        <input type="number" id="time" placeholder="Time (Years)">
 
-<label>Payment Frequency</label>
-<select id="frequency">
-<option value="12">Monthly</option>
-<option value="4">Quarterly</option>
-<option value="1">Yearly</option>
-</select>
+        <label>Payment Frequency</label>
+        <select id="frequency">
+            <option value="12">Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="1">Yearly</option>
+        </select>
 
-<label>Processing Fee (%)</label>
-<input type="number" id="fee" placeholder="e.g. 1">
+        <label>Processing Fee (%)</label>
+        <input type="number" id="fee" placeholder="Example: 1">
 
-<label>Prepayment Amount (optional)</label>
-<input type="number" id="prepayInput" placeholder="Extra payment">
+        <label>Prepayment Amount (Optional)</label>
+        <input type="number" id="prepayInput" placeholder="Extra Payment">
 
-<button onclick="calculateEMI()">Calculate</button>
+        <button onclick="calculateEMI()">Calculate EMI</button>
 
-<div id="result"></div>
-<div class="table-container" id="table"></div>
-</div>
+        <div id="result"></div>
+        <div class="table-container" id="table"></div>
+    </div>
 
-<!-- LOAN COMPARISON -->
-<div class="card">
-<h3>Loan Comparison (Detailed)</h3>
+    <div class="card">
+        <h3>Loan Comparison</h3>
 
-<div class="grid">
-<div>
-<h4>Loan 1</h4>
-<input type="number" id="c1" placeholder="Amount">
-<input type="number" id="r1" placeholder="Rate (%)">
-<input type="number" id="t1" placeholder="Years">
-</div>
+        <div class="grid">
+            <div>
+                <h4>Loan 1</h4>
+                <input type="number" id="c1" placeholder="Amount">
+                <input type="number" id="r1" placeholder="Interest Rate (%)">
+                <input type="number" id="t1" placeholder="Years">
+            </div>
 
-<div>
-<h4>Loan 2</h4>
-<input type="number" id="c2" placeholder="Amount">
-<input type="number" id="r2" placeholder="Rate (%)">
-<input type="number" id="t2" placeholder="Years">
-</div>
-</div>
+            <div>
+                <h4>Loan 2</h4>
+                <input type="number" id="c2" placeholder="Amount">
+                <input type="number" id="r2" placeholder="Interest Rate (%)">
+                <input type="number" id="t2" placeholder="Years">
+            </div>
+        </div>
 
-<button onclick="compareLoans()">Compare Loans</button>
+        <button onclick="compareLoans()">Compare Loans</button>
 
-<div id="compareResult"></div>
-</div>
+        <div id="compareResult"></div>
+    </div>
 
 </div>
 
 <script>
-function calculateEMI(){
-let P=parseFloat(document.getElementById('amount').value);
-let annualRate=parseFloat(document.getElementById('rate').value);
-let years=parseFloat(document.getElementById('time').value);
-let freq=parseInt(document.getElementById('frequency').value);
-let feePerc=parseFloat(document.getElementById('fee').value)||0;
-let prepayVal=parseFloat(document.getElementById('prepayInput').value)||0;
+function calculateEMI() {
+    let P = parseFloat(document.getElementById('amount').value);
+    let annualRate = parseFloat(document.getElementById('rate').value);
+    let years = parseFloat(document.getElementById('time').value);
+    let freq = parseInt(document.getElementById('frequency').value);
+    let feePerc = parseFloat(document.getElementById('fee').value) || 0;
+    let prepayVal = parseFloat(document.getElementById('prepayInput').value) || 0;
 
-if(!P||!annualRate||!years){ 
- document.getElementById('result').innerHTML="Enter all values"; 
- return; 
+    if (!P || !annualRate || !years) {
+        document.getElementById('result').innerHTML = "Please enter all values";
+        return;
+    }
+
+    let n = years * freq;
+    let r = annualRate / 100 / freq;
+
+    let EMI = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+
+    let processingFee = P * (feePerc / 100);
+    let totalPayment = (EMI * n) + processingFee;
+
+    document.getElementById('result').innerHTML = `
+        <div class="highlight">
+            <b>EMI:</b> ₹${EMI.toFixed(2)}<br>
+            <b>Processing Fee:</b> ₹${processingFee.toFixed(2)}<br>
+            <b>Total Payment:</b> ₹${totalPayment.toFixed(2)}
+        </div>
+    `;
+
+    generateTable(P, r, n, EMI, prepayVal);
 }
 
-let n=years*freq;
-let r=annualRate/100/freq;
+function generateTable(P, r, n, EMI, prepayVal) {
+    let balance = P;
 
-let EMI=(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+    let html = `
+    <table>
+        <tr>
+            <th>Period</th>
+            <th>Opening Balance</th>
+            <th>Interest</th>
+            <th>Principal Paid</th>
+            <th>Closing Balance</th>
+        </tr>`;
 
-let processingFee=P*(feePerc/100);
-let totalPayment=(EMI*n)+processingFee;
+    for (let i = 1; i <= n; i++) {
+        let opening = balance;
+        let interest = balance * r;
+        let principal = EMI - interest;
 
+        balance = balance + interest - EMI - prepayVal;
 
-document.getElementById('result').innerHTML=`
-<div class="highlight">
-EMI: ₹${EMI.toFixed(2)}<br>
-Processing Fee: ₹${processingFee.toFixed(2)}<br>
-Total Payment: ₹${totalPayment.toFixed(2)}<br>
-</div>
-<p>You will pay ₹${EMI.toFixed(0)} every period.</p>
-<p>Prepayment of ₹${prepayVal} reduces interest and tenure.</p>
-`;
+        if (balance < 0) {
+            balance = 0;
+        }
 
-generateTable(P,r,n,EMI,prepayVal);
+        html += `
+        <tr>
+            <td>${i}</td>
+            <td>₹${opening.toFixed(2)}</td>
+            <td>₹${interest.toFixed(2)}</td>
+            <td>₹${principal.toFixed(2)}</td>
+            <td>₹${balance.toFixed(2)}</td>
+        </tr>`;
+
+        if (balance <= 0) {
+            break;
+        }
+    }
+
+    html += `</table>`;
+    document.getElementById('table').innerHTML = html;
 }
 
-function generateTable(P,r,n,EMI,prepayVal){
-let balance=P;
-let html="<table><tr><th>Period</th><th>Opening Balance</th><th>Interest</th><th>Principal</th><th>Closing Balance</th></tr>";
+function compareLoans() {
+    let P1 = parseFloat(document.getElementById('c1').value);
+    let R1 = parseFloat(document.getElementById('r1').value);
+    let T1 = parseFloat(document.getElementById('t1').value);
 
-for(let i=1;i<=n;i++){
-let opening=balance;
-let interest=balance*r;
-let principal=(EMI-interest)+prepayVal;
-balance-=principal;
-if(balance<0) balance=0;
+    let P2 = parseFloat(document.getElementById('c2').value);
+    let R2 = parseFloat(document.getElementById('r2').value);
+    let T2 = parseFloat(document.getElementById('t2').value);
 
-html+=`<tr>
-<td>${i}</td>
-<td>${opening.toFixed(0)}</td>
-<td>${interest.toFixed(0)}</td>
-<td>${principal.toFixed(0)}</td>
-<td>${balance.toFixed(0)}</td>
-</tr>`;
+    if (!P1 || !R1 || !T1 || !P2 || !R2 || !T2) {
+        document.getElementById('compareResult').innerHTML = "Please enter all comparison values";
+        return;
+    }
 
-if(balance<=0) break;
-}
+    let r1 = R1 / 12 / 100;
+    let n1 = T1 * 12;
 
-html+="</table>";
-document.getElementById('table').innerHTML=html;
-}
+    let r2 = R2 / 12 / 100;
+    let n2 = T2 * 12;
 
-function compareLoans(){
-let P1=c1.value, r1m=r1.value/12/100, n1=t1.value*12;
-let P2=c2.value, r2m=r2.value/12/100, n2=t2.value*12;
+    let emi1 = (P1 * r1 * Math.pow(1 + r1, n1)) / (Math.pow(1 + r1, n1) - 1);
+    let emi2 = (P2 * r2 * Math.pow(1 + r2, n2)) / (Math.pow(1 + r2, n2) - 1);
 
-if(!P1||!r1m||!n1||!P2||!r2m||!n2){
- document.getElementById('compareResult').innerHTML="Enter all comparison values";
- return;
-}
+    let total1 = emi1 * n1;
+    let total2 = emi2 * n2;
 
-let emi1=(P1*r1m*Math.pow(1+r1m,n1))/(Math.pow(1+r1m,n1)-1);
-let emi2=(P2*r2m*Math.pow(1+r2m,n2))/(Math.pow(1+r2m,n2)-1);
+    let betterLoan = total1 < total2
+        ? "Loan 1 is better because it has a lower total payment."
+        : "Loan 2 is better because it has a lower total payment.";
 
-let total1=emi1*n1;
-let total2=emi2*n2;
+    document.getElementById('compareResult').innerHTML = `
+        <div class="highlight">
+            <b>Loan 1</b><br>
+            EMI: ₹${emi1.toFixed(2)}<br>
+            Total Payment: ₹${total1.toFixed(2)}<br><br>
 
-let better = total1 < total2 ? "Loan 1 is better (lower total cost)" : "Loan 2 is better (lower total cost)";
+            <b>Loan 2</b><br>
+            EMI: ₹${emi2.toFixed(2)}<br>
+            Total Payment: ₹${total2.toFixed(2)}<br><br>
 
-
-document.getElementById('compareResult').innerHTML=`
-<div class="highlight">
-<b>Loan 1</b><br>
-EMI: ₹${emi1.toFixed(0)}<br>
-Total Payment: ₹${total1.toFixed(0)}<br><br>
-
-<b>Loan 2</b><br>
-EMI: ₹${emi2.toFixed(0)}<br>
-Total Payment: ₹${total2.toFixed(0)}
-</div>
-
-<p><b>Suggestion:</b> ${better}</p>
-`;
+            <b>Suggestion:</b> ${betterLoan}
+        </div>
+    `;
 }
 </script>
 
 </body>
 </html>
+```
+
+Save it as:
+
+```text
+index.html
+```
+
+Then upload to GitHub Pages.
